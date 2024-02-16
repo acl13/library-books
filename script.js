@@ -27,3 +27,18 @@ addBookToLibrary(book3);
 addBookToLibrary(book4);
 addBookToLibrary(book5);
 console.log(myLibrary);
+
+let container = document.querySelector('#container');
+
+function displayBooks() {
+    for(book of myLibrary) {
+        console.log(book.title);
+        let div = document.createElement('div');
+        div.textContent = `${book.title} by ${book.author}, ${book.pages} pages, ${book.read}`;
+      container.appendChild(div);
+    }
+
+}
+
+console.log(container);
+displayBooks();
