@@ -36,3 +36,15 @@ function displayBooks() {
 }
 
 displayBooks();
+
+const openModal = document.getElementById('open-modal');
+const dialog = document.querySelector('dialog');
+const cancel = document.getElementById('cancel')
+
+openModal.addEventListener('click', () => {
+    dialog.showModal();
+});
+
+cancel.addEventListener('click', () => {
+    dialog.close();
+})
