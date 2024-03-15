@@ -24,25 +24,17 @@ const author = document.getElementById('author');
 const pages = document.getElementById('pages');
 const read = document.getElementsByName('read');
 
-submit.addEventListener('click', () => {
-    
-    console.log(title.value);
-    console.log(author.value);
-    console.log(pages.value);
-    
+submit.addEventListener('click', () => {    
     for (i = 0; i < read.length; i++) {
         if (read[i].checked) {
             var radioValue = read[i].value;
-            console.log(read[i].value);
         }
     }
-    
 
     addBookToLibrary(title.value, author.value, pages.value, radioValue);
     console.log(myLibrary);
 
     displayBooks();
-    
 }
 )
 
@@ -91,8 +83,6 @@ let container = document.querySelector('#container');
 
 function displayBooks() {
     for(book of myLibrary) {
-        console.log(book);
-
         let div = document.createElement('div');
         let titleAndAuthor = document.createElement('p');
         let pagesNum = document.createElement('p');
