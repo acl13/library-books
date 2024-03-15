@@ -27,7 +27,7 @@ let container = document.querySelector('#container');
 
 function displayBooks() {
     for(book of myLibrary) {
-        console.log(book.title);
+
         let div = document.createElement('div');
         let titleAndAuthor = document.createElement('p');
         let pagesNum = document.createElement('p');
@@ -48,6 +48,7 @@ displayBooks();
 const openModal = document.getElementById('open-modal');
 const dialog = document.querySelector('dialog');
 const cancel = document.getElementById('cancel')
+const submit = document.getElementById('submit');
 
 openModal.addEventListener('click', () => {
     dialog.showModal();
@@ -56,3 +57,35 @@ openModal.addEventListener('click', () => {
 cancel.addEventListener('click', () => {
     dialog.close();
 })
+
+submit.addEventListener('click', formSubmit, false);
+
+
+function formSubmit(event) {
+    event.preventDefault();
+
+}
+
+const title = document.getElementById('title');
+const author = document.getElementById('author');
+const pages = document.getElementById('pages');
+const read = document.getElementsByName('read');
+
+submit.addEventListener('click', () => {
+    console.log(title.value);
+    console.log(author.value);
+    console.log(pages.value);
+    
+    for (i = 0; i < read.length; i++) {
+        if (read[i].checked) {
+            console.log(read[i].value);
+        }
+    }
+}
+)
+
+
+submit.addEventListener('click', () => {
+    dialog.close();
+})
+
