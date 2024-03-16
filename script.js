@@ -83,20 +83,47 @@ let container = document.querySelector('#container');
 
 function displayBooks() {
     for(book of myLibrary) {
+
         let div = document.createElement('div');
+       // let index = myLibrary.indexOf(book);
+       // div.dataset.index = index;
+       
+
         let titleAndAuthor = document.createElement('p');
         let pagesNum = document.createElement('p');
         let readStatus = document.createElement('p');
+        let removeBook = document.createElement('button');
+
         titleAndAuthor.textContent = `${book.title} by ${book.author}`;
         pagesNum.textContent = `${book.pages} pages`;
         readStatus.textContent = `${book.read}`;
+        removeBook.textContent = 'Remove Book From Library';
+
       container.appendChild(div);
       div.appendChild(titleAndAuthor);
       div.appendChild(pagesNum);
       div.appendChild(readStatus);
-    }
+      div.appendChild(removeBook);
 
+      removeBook.addEventListener('click', () => {
+     
+        myLibrary.splice(div.dataset.index, 1);
+        div.remove();
+        
+        console.log(myLibrary);
+        for(book of myLibrary) {
+            let index = myLibrary.indexOf(book);
+            div.dataset.index = index;
+            return div.dataset.index;
+        }
+    }
+    )
+
+    }
+    console.log(myLibrary);
 }
 
+
+displayBooks();
 
 
