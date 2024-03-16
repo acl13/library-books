@@ -69,11 +69,11 @@ function addBookToLibrary(title, author, pages, read) {
     myLibrary.push(book);
 }
 
-addBookToLibrary('The Hobbit', 'J.R.R Tolkien', 295, 'not read yet');
-addBookToLibrary('Of Mice and Men', 'John Steinbeck', 107, 'not read yet');
-addBookToLibrary('Animal Farm', 'George Orwell', 112, 'read');
-addBookToLibrary('The Great Gatsby', 'F. Scott Fitzgerald', 189, 'read');
-addBookToLibrary('A Clockwork Orange', 'Anthony Burgess', 192, 'not read yet');
+//addBookToLibrary('The Hobbit', 'J.R.R Tolkien', 295, 'not read yet');
+//addBookToLibrary('Of Mice and Men', 'John Steinbeck', 107, 'not read yet');
+//addBookToLibrary('Animal Farm', 'George Orwell', 112, 'read');
+//addBookToLibrary('The Great Gatsby', 'F. Scott Fitzgerald', 189, 'read');
+//addBookToLibrary('A Clockwork Orange', 'Anthony Burgess', 192, 'not read yet');
 
 
 let container = document.querySelector('#container');
@@ -82,13 +82,15 @@ let container = document.querySelector('#container');
 
 
 function displayBooks() {
-    for(book of myLibrary) {
+    while(container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+
+
+   for(book of myLibrary) {
+
 
         let div = document.createElement('div');
-       // let index = myLibrary.indexOf(book);
-       // div.dataset.index = index;
-       
-
         let titleAndAuthor = document.createElement('p');
         let pagesNum = document.createElement('p');
         let readStatus = document.createElement('p');
@@ -118,12 +120,11 @@ function displayBooks() {
         }
     }
     )
-
     }
     console.log(myLibrary);
 }
 
 
-displayBooks();
+//displayBooks();
 
 
