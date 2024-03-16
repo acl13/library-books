@@ -40,6 +40,10 @@ submit.addEventListener('click', () => {
 
 
 submit.addEventListener('click', () => {
+    title.value = '';
+    author.value = '';
+    pages.value = '';
+    read.value = undefined;
     dialog.close();
 })
 
