@@ -48,7 +48,7 @@ h1 {
 
 .slider:before {
     position: absolute;
-    content: 'YES';
+    content: 'NO';
     align-content: center;
     height: 26px;
     width: 36px;
@@ -65,10 +65,10 @@ background-color: #2196F3;
 }
 
 input:checked + .slider:before {
-    -webkit-transform: translateX(38px);
-    -ms-transform: translateX(38px);
-    transform: translateX(38px);
-    content: 'NO';
+    -webkit-transform: translateX(34px);
+    -ms-transform: translateX(34px);
+    transform: translateX(34px);
+    content: 'YES';
     padding-left: 4px;
     padding-right: 4px;
     width: fit-content;

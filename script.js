@@ -32,6 +32,7 @@ submit.addEventListener('click', () => {
     }
 
     addBookToLibrary(title.value, author.value, pages.value, radioValue);
+    console.log(radioValue);
     console.log(myLibrary);
 
     displayBooks();
@@ -73,7 +74,7 @@ function addBookToLibrary(title, author, pages, read) {
     myLibrary.push(book);
 }
 
-addBookToLibrary('The Hobbit', 'J.R.R Tolkien', 295, 'not read yet');
+//addBookToLibrary('The Hobbit', 'J.R.R Tolkien', 295, 'not read yet');
 //addBookToLibrary('Of Mice and Men', 'John Steinbeck', 107, 'not read yet');
 //addBookToLibrary('Animal Farm', 'George Orwell', 112, 'read');
 //addBookToLibrary('The Great Gatsby', 'F. Scott Fitzgerald', 189, 'read');
@@ -127,6 +128,14 @@ function displayBooks() {
       toggle.appendChild(yesOrNo);
       toggle.appendChild(slider);
 
+      if (book.read === 'yes') {
+        console.log('test worked');
+        yesOrNo.checked = true;
+      } else if (book.read === 'no') {
+        console.log('test failed');
+        yesOrNo.checked = false;
+      }
+
 
       removeBook.addEventListener('click', () => {
      
@@ -146,6 +155,6 @@ function displayBooks() {
 }
 
 
-displayBooks();
+//displayBooks();
 
 
