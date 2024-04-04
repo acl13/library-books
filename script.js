@@ -66,6 +66,17 @@ function Book(title, author, pages, read) {
     this.info = function() {
         return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read} ` 
     }
+    this.toggle = function() {
+        if (this.read === 'yes') {
+            this.read = 'no';
+            console.log(`read ${this.read}`)
+            return this.read;
+        } else if (this.read === 'no') {
+            this.read = 'yes';
+            console.log(`read ${this.read}`)
+            return this.read;
+        }
+    }
 }
 
 
@@ -129,13 +140,14 @@ function displayBooks() {
       toggle.appendChild(slider);
 
       if (book.read === 'yes') {
-        console.log('test worked');
         yesOrNo.checked = true;
       } else if (book.read === 'no') {
-        console.log('test failed');
         yesOrNo.checked = false;
       }
 
+      yesOrNo.addEventListener('click', () => {
+        book.toggle();
+      })
 
       removeBook.addEventListener('click', () => {
      
@@ -152,6 +164,7 @@ function displayBooks() {
     )
     }
     console.log(myLibrary);
+    //book.toggle();
 }
 
 
