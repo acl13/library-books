@@ -23,14 +23,12 @@ button {
     background-color: #f7e7c6;
 }
 
-/* 
 
 button:hover {
     background-color: #2e2b26;
     color: #f7e7c6;
 }
 
-*/
 
 h1 + button {
     padding: 10px 100px;
@@ -38,14 +36,12 @@ h1 + button {
     background-color: #2e2b26;
  }
 
- /*
 
  h1 + button:hover {
     background-color: #f7e7c6;
     color: #2e2b26;
  }
 
- */
 
  footer {
     color: #f7e7c6;
