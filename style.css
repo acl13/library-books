@@ -3,9 +3,29 @@
 }
 
 h1 {
-    color: purple
+    text-align: center;
+    font-size: 64px;
+    font-style: italic;
+    margin-bottom: 20px;
 }
 
+
+button {
+    padding: 6px 8px;
+    border-radius: 10px;
+}
+
+h1 + button {
+    padding: 10px 100px;
+ }
+ 
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
 
 #container {
     display: grid;
@@ -27,10 +47,6 @@ h1 {
 }
 
 
-div button {
-    padding: 6px 8px;
-    border-radius: 10px;
-}
 
 
 
