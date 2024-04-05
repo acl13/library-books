@@ -85,11 +85,12 @@ function addBookToLibrary(title, author, pages, read) {
     myLibrary.push(book);
 }
 
-//addBookToLibrary('The Hobbit', 'J.R.R Tolkien', 295, 'not read yet');
-//addBookToLibrary('Of Mice and Men', 'John Steinbeck', 107, 'not read yet');
-//addBookToLibrary('Animal Farm', 'George Orwell', 112, 'read');
-//addBookToLibrary('The Great Gatsby', 'F. Scott Fitzgerald', 189, 'read');
-//addBookToLibrary('A Clockwork Orange', 'Anthony Burgess', 192, 'not read yet');
+addBookToLibrary('The Hobbit', 'J.R.R Tolkien', 295, 'no');
+addBookToLibrary(`The Hitchhiker's Guide to the Galaxy`, 'Douglas Adams', 224,  'yes');
+addBookToLibrary('Of Mice and Men', 'John Steinbeck', 107, 'no');
+addBookToLibrary('Animal Farm', 'George Orwell', 112, 'yes');
+addBookToLibrary('The Great Gatsby', 'F. Scott Fitzgerald', 189, 'yes');
+addBookToLibrary('A Clockwork Orange', 'Anthony Burgess', 192, 'no');
 
 
 let container = document.querySelector('#container');
@@ -107,15 +108,17 @@ function displayBooks() {
 
 
         let div = document.createElement('div');
-        let titleAndAuthor = document.createElement('p');
+        let title = document.createElement('h2');
+        let author = document.createElement('h3');
         let pagesNum = document.createElement('p');
         let readStatus = document.createElement('p');
         let removeBook = document.createElement('button');
 
 
-        titleAndAuthor.textContent = `${book.title} by ${book.author}`;
+        title.textContent = `${book.title}`;
+        author.textContent = `by ${book.author}`;
         pagesNum.textContent = `${book.pages} pages`;
-        readStatus.textContent = `${book.read}`;
+        readStatus.textContent = 'Have you read this book?';
         removeBook.textContent = 'Remove Book From Library';
 
         let toggle = document.createElement('label');
@@ -130,14 +133,15 @@ function displayBooks() {
 
 
       container.appendChild(div);
-      div.appendChild(titleAndAuthor);
+      div.appendChild(title);
+      div.appendChild(author);
       div.appendChild(pagesNum);
       div.appendChild(readStatus);
-      div.appendChild(removeBook);
       div.appendChild(yesOrNo);
       div.appendChild(toggle);
       toggle.appendChild(yesOrNo);
       toggle.appendChild(slider);
+      div.appendChild(removeBook);
 
       if (book.read === 'yes') {
         yesOrNo.checked = true;
@@ -164,10 +168,8 @@ function displayBooks() {
     )
     }
     console.log(myLibrary);
-    //book.toggle();
 }
 
 
-//displayBooks();
-
+displayBooks();
 

@@ -1,4 +1,6 @@
-
+* {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 
 h1 {
     color: purple
@@ -12,12 +14,16 @@ h1 {
 }
 
 
-
 #container div {
     border: 1px solid black;
     padding: 20px;
     text-align: center;
+    width: 250px;
+    height: 300px;
 }
+
+
+
 
 .switch {
     position: relative;
