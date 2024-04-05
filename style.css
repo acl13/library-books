@@ -23,15 +23,21 @@ h1 {
 }
 
 
+div button {
+    padding: 6px 8px;
+    border-radius: 10px;
+}
+
 
 
 .switch {
     position: relative;
     margin: 20px auto;
     display: block;
-    width: 80px;
-    height: 34px;
+    width: 74px;
+    height: 26px;
     text-align: center;
+    
 }
 
 .switch input {
@@ -54,10 +60,12 @@ h1 {
 
 .slider:before {
     position: absolute;
-    content: 'NO';
+    font-size: 12px;
+    content: 'No';
     align-content: center;
-    height: 26px;
-    width: 36px;
+    height: 18px;
+    width: fit-content;
+    padding: 0px 4px;
     left: 4px;
     bottom: 4px;
     background-color: white;
@@ -67,16 +75,16 @@ h1 {
 
 
 input:checked + .slider {
-background-color: #2196F3;
+background-color: #2196F3; 
+
 }
 
 input:checked + .slider:before {
-    -webkit-transform: translateX(34px);
-    -ms-transform: translateX(34px);
-    transform: translateX(34px);
-    content: 'YES';
-    padding-left: 4px;
-    padding-right: 4px;
+    -webkit-transform: translateX(36px);
+    -ms-transform: translateX(36px);
+    transform: translateX(38px);
+    content: 'Yes';
+    padding: 0px 4px;
     width: fit-content;
 }
 
