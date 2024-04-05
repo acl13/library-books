@@ -15,11 +15,15 @@ h1 {
 
 
 #container div {
-    border: 1px solid black;
+    border-left: 8px black;
+    border-style: double;
     padding: 20px;
     text-align: center;
     width: 250px;
     height: 300px;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.61);
+    border-radius: 0px 5px 5px 0px;
+   /* background-color: #f7eedc; */
 }
 
 
