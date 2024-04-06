@@ -11,3 +11,5 @@ JavaScript:
  - Working with user inputs
 
   
+
+  Photo credit Inaki del Olmo on Unsplash 
