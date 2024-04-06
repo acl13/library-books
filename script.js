@@ -1,61 +1,3 @@
-const openModal = document.getElementById('open-modal');
-const dialog = document.querySelector('dialog');
-const cancel = document.getElementById('cancel')
-const submit = document.getElementById('submit');
-
-openModal.addEventListener('click', () => {
-    dialog.showModal();
-});
-
-cancel.addEventListener('click', () => {
-    dialog.close();
-})
-
-submit.addEventListener('click', formSubmit, false);
-
-
-function formSubmit(event) {
-    event.preventDefault();
-
-}
-
-const title = document.getElementById('title');
-const author = document.getElementById('author');
-const pages = document.getElementById('pages');
-const read = document.getElementsByName('read');
-
-submit.addEventListener('click', () => {    
-    for (i = 0; i < read.length; i++) {
-        if (read[i].checked) {
-            var radioValue = read[i].value;
-        }
-    }
-
-    addBookToLibrary(title.value, author.value, pages.value, radioValue);
-    console.log(radioValue);
-    console.log(myLibrary);
-
-    displayBooks();
-}
-)
-
-
-submit.addEventListener('click', () => {
-    title.value = '';
-    author.value = '';
-    pages.value = '';
-    read.value = undefined;
-    dialog.close();
-})
-
-
-
-
-
-
-
-
-
 const myLibrary = [];
 
 function Book(title, author, pages, read) {
@@ -172,4 +114,59 @@ function displayBooks() {
 
 
 displayBooks();
+
+
+
+const openModal = document.getElementById('open-modal');
+const dialog = document.querySelector('dialog');
+const cancel = document.getElementById('cancel')
+const submit = document.getElementById('submit');
+
+openModal.addEventListener('click', () => {
+    dialog.showModal();
+});
+
+cancel.addEventListener('click', () => {
+    dialog.close();
+})
+
+submit.addEventListener('click', formSubmit, false);
+
+
+function formSubmit(event) {
+    event.preventDefault();
+
+}
+
+const title = document.getElementById('title');
+const author = document.getElementById('author');
+const pages = document.getElementById('pages');
+const read = document.getElementsByName('read');
+
+submit.addEventListener('click', () => {    
+    for (i = 0; i < read.length; i++) {
+        if (read[i].checked) {
+            var radioValue = read[i].value;
+        }
+    }
+
+    addBookToLibrary(title.value, author.value, pages.value, radioValue);
+    console.log(radioValue);
+    console.log(myLibrary);
+
+    displayBooks();
+}
+)
+
+
+submit.addEventListener('click', () => {
+    title.value = '';
+    author.value = '';
+    pages.value = '';
+    read.value = undefined;
+    dialog.close();
+})
+
+
+
 
