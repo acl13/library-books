@@ -1,4 +1,5 @@
 const myLibrary = [];
+const container = document.querySelector('#container');
 
 class Book {
     constructor(title, author, pages, read) {
@@ -8,7 +9,6 @@ class Book {
         this.read = read;
     }
   
-   
     toggle () {
         if (this.read === 'yes') {
             this.read = 'no';
@@ -19,7 +19,6 @@ class Book {
         }
     }
 }
-
 
 function addBookToLibrary(title, author, pages, read) {
     let book = new Book(title, author, pages, read);
@@ -33,45 +32,32 @@ addBookToLibrary('Animal Farm', 'George Orwell', 112, 'yes');
 addBookToLibrary('The Great Gatsby', 'F. Scott Fitzgerald', 189, 'yes');
 addBookToLibrary('A Clockwork Orange', 'Anthony Burgess', 192, 'no');
 
-
-let container = document.querySelector('#container');
-
-
-
-
 function displayBooks() {
     while(container.firstChild) {
         container.removeChild(container.firstChild);
     }
 
-
    for(book of myLibrary) {
-
-
-        let div = document.createElement('div');
-        let title = document.createElement('h2');
-        let author = document.createElement('h3');
-        let pagesNum = document.createElement('p');
-        let readStatus = document.createElement('p');
-        let removeBook = document.createElement('button');
-
+        const div = document.createElement('div');
+        const title = document.createElement('h2');
+        const author = document.createElement('h3');
+        const pagesNum = document.createElement('p');
+        const readStatus = document.createElement('p');
+        const removeBook = document.createElement('button');
+        const toggle = document.createElement('label');
+        const yesOrNo = document.createElement('input');
+        const slider = document.createElement('span');
 
         title.textContent = `${book.title}`;
         author.textContent = `by ${book.author}`;
         pagesNum.textContent = `${book.pages} pages`;
         readStatus.textContent = 'Have you read this book?';
         removeBook.textContent = 'Remove Book From Library';
-
-        let toggle = document.createElement('label');
-        let yesOrNo = document.createElement('input');
-        let slider = document.createElement('span');
-
         toggle.classList.add('switch');
         yesOrNo.setAttribute('type', 'checkbox');
         yesOrNo.classList.add('checkbox');
         slider.classList.add('slider');
         slider.classList.add('round');
-
 
       container.appendChild(div);
       div.appendChild(title);
@@ -98,8 +84,7 @@ function displayBooks() {
      
         myLibrary.splice(div.dataset.index, 1);
         div.remove();
-        
-        console.log(myLibrary);
+
         for(book of myLibrary) {
             let index = myLibrary.indexOf(book);
             div.dataset.index = index;
@@ -108,18 +93,18 @@ function displayBooks() {
     }
     )
     }
-    console.log(myLibrary);
 }
 
-
 displayBooks();
-
-
 
 const openModal = document.getElementById('open-modal');
 const dialog = document.querySelector('dialog');
 const cancel = document.getElementById('cancel')
 const submit = document.getElementById('submit');
+const title = document.getElementById('title');
+const author = document.getElementById('author');
+const pages = document.getElementById('pages');
+const read = document.getElementsByName('read');
 
 openModal.addEventListener('click', () => {
     dialog.showModal();
@@ -129,18 +114,12 @@ cancel.addEventListener('click', () => {
     dialog.close();
 })
 
-submit.addEventListener('click', formSubmit, false);
-
-
 function formSubmit(event) {
     event.preventDefault();
 
 }
 
-const title = document.getElementById('title');
-const author = document.getElementById('author');
-const pages = document.getElementById('pages');
-const read = document.getElementsByName('read');
+submit.addEventListener('click', formSubmit, false);
 
 submit.addEventListener('click', () => {    
     for (i = 0; i < read.length; i++) {
@@ -154,18 +133,10 @@ submit.addEventListener('click', () => {
     console.log(myLibrary);
 
     displayBooks();
-}
-)
-
-
-submit.addEventListener('click', () => {
     title.value = '';
     author.value = '';
     pages.value = '';
     read.value = undefined;
     dialog.close();
-})
-
-
-
-
+}
+)
