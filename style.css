@@ -173,6 +173,10 @@ input[type='radio'] {
     display: inline-block;
 }
 
+input:required:invalid {
+    border: 1px solid #fa6006;
+}
+
 #cancel:hover {
     background-color: #dc8920;
 }
