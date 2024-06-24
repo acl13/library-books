@@ -169,6 +169,10 @@ input {
     margin-bottom: 8px;
 }
 
+input[type='text'] {
+    width: 80%; 
+}
+
 input[type='radio'] {
     display: inline-block;
 }
