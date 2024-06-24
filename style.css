@@ -172,3 +172,11 @@ input {
 input[type='radio'] {
     display: inline-block;
 }
+
+#cancel:hover {
+    background-color: #dc8920;
+}
+
+#submit:hover {
+    background-color: #8da683;
+}
