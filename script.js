@@ -99,6 +99,7 @@ displayBooks();
 
 const openModal = document.getElementById('open-modal');
 const dialog = document.querySelector('dialog');
+const bookForm = document.getElementById('book-form');
 const cancel = document.getElementById('cancel')
 const submit = document.getElementById('submit');
 const title = document.getElementById('title');
@@ -114,14 +115,17 @@ cancel.addEventListener('click', () => {
     dialog.close();
 })
 
-function formSubmit(event) {
+function preventFormDefault(event) {
     event.preventDefault();
-
 }
 
-submit.addEventListener('click', formSubmit, false);
+submit.addEventListener('click', preventFormDefault, false);
 
-submit.addEventListener('click', () => {    
+submit.addEventListener('click', () => {  
+    if(!bookForm.checkValidity()) {
+        alert('Please fill out all required fields');
+     } else {
+         
     for (i = 0; i < read.length; i++) {
         if (read[i].checked) {
             var radioValue = read[i].value;
@@ -138,5 +142,6 @@ submit.addEventListener('click', () => {
     pages.value = '';
     read.value = undefined;
     dialog.close();
+    }
 }
 )
